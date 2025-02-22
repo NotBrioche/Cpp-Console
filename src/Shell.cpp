@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include "Shell.h"
+#include "HistoryCommand.cpp"
 
 void Shell::run()
 {
@@ -10,11 +11,25 @@ void Shell::run()
     std::cout << "> ";
     std::getline(std::cin, command);
 
+    if (command.size() < 1)
+      continue;
+
     if (command == "exit")
-    {
       break;
+
+    if (command == "history")
+    {
+      if (history.size() < 1)
+        std::cout << "You havn't sent any commands" << std::endl;
+
+      for (auto const &i : history)
+        std::cout << i << std::endl;
+
+      saveCommand(command);
+      continue;
     }
 
+    saveCommand(command);
     executeCommand(command);
   }
 }
@@ -50,4 +65,11 @@ std::list<std::string> Shell::getParts(const std::string &command)
   }
 
   return args;
+}
+
+void Shell::saveCommand(std::string command)
+{
+  history.push_back(command);
+  if (history.size() > 15)
+    history.pop_front();
 }

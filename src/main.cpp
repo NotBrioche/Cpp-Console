@@ -21,8 +21,10 @@ int main()
   std::list<Command *> helpCommands = shell.commands;
   Command exit("exit", "exits the shell", "exit");
   Command help("help", "display the list of commands", "help");
+  Command history("history", "display the last 15 commands sent", "history");
   helpCommands.push_back(&exit);
   helpCommands.push_back(&help);
+  helpCommands.push_back(&history);
 
   // Add the help command to the shell
   HelpCommand helpCommand(helpCommands);
