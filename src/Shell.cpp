@@ -1,11 +1,6 @@
 #include <iostream>
 #include "Shell.h"
 
-Shell::Shell()
-{
-  std::cout << "Shell started!" << std::endl;
-}
-
 void Shell::run()
 {
   std::string command;
@@ -25,5 +20,14 @@ void Shell::run()
 
 void Shell::executeCommand(const std::string &command)
 {
+  for (auto const &i : commands)
+  {
+    if (command == i->getName())
+    {
+      i->execute();
+      return;
+    }
+  }
+
   std::cout << "Unknown command: " << command << std::endl;
 }
