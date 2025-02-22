@@ -6,7 +6,7 @@ Ce projet est un CLI simple qui n'a pas grande utilitée. Il a été développé
 
 Le but serait de réaliser les commandes suivantes en 1 semaine :
 
-- ❌ `help` - Affiche la liste des commandes disponibles
+- ✅ `help` - Affiche la liste des commandes disponibles
 - ✅ `clear` - Efface l'écran
 - ❌ `history` - Affiche les dernière commandes utilisés
 - ✅ `echo` [message] - Affiche le message specifié

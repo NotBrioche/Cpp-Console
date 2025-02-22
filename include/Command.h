@@ -13,6 +13,11 @@ protected:
 
 public:
   Command() {};
+  Command(std::string name, std::string description, std::string syntax) {
+    this->name = name;
+    this->description = description;
+    this->syntax = syntax;
+  };
 
   std::string getName()
   {
