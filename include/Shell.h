@@ -14,6 +14,8 @@ public:
 
   std::list<Command *> commands;
   void executeCommand(const std::string &command);
+
+  std::list<std::string> getParts(const std::string &command);
 };
 
 #endif

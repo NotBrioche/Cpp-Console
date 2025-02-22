@@ -2,6 +2,7 @@
 #define COMMAND_H
 
 #include <string>
+#include <list>
 
 class Command
 {
@@ -28,7 +29,7 @@ public:
     return this->syntax;
   }
 
-  virtual void execute() {};
+  virtual void execute(std::list<std::string> &args) {};
 };
 
 #endif

@@ -9,7 +9,7 @@ public:
     this->description = "Clears the console";
     this->syntax = "clear";
   };
-  void execute() override
+  void execute(std::list<std::string> &args) override
   {
     system("clear");
   };
