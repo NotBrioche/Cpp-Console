@@ -1,6 +1,5 @@
-#include "Shell.h"
-#include "Command.h"
 #include <iostream>
+#include "Shell.h"
 
 Shell::Shell()
 {
