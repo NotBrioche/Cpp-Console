@@ -16,20 +16,8 @@ void Shell::run()
     if (command == "exit")
       break;
 
-    if (command == "history")
-    {
-      if (history.size() < 1)
-        std::cout << "You havn't sent any commands" << std::endl;
-
-      for (auto const &i : history)
-        std::cout << i << std::endl;
-
-      saveCommand(command);
-      continue;
-    }
-
-    saveCommand(command);
     executeCommand(command);
+    saveCommand(command);
   }
 }
 

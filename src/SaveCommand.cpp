@@ -1,12 +1,10 @@
 #include "Command.h"
 #include "Shell.h"
 
-#include <iostream>
-
 class SaveCommand : public Command
 {
 public:
-  SaveCommand(Shell* shell)
+  SaveCommand(Shell *shell)
   {
     this->name = "save";
     this->description = "save the history of commands in a file";
@@ -14,7 +12,7 @@ public:
     this->shell = shell;
   };
 
-  Shell* shell;
+  Shell *shell;
 
   void execute(std::list<std::string> &args) override
   {
