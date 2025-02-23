@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Iinclude
+CXXFLAGS = -std=c++17 -Wall -Iinclude -Isrc/commands
 
 SRC = src/main.cpp src/Shell.cpp
 OBJ = $(SRC:.cpp=.o)

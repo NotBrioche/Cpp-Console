@@ -13,18 +13,17 @@ int main()
 
   Shell shell;
 
-  ClearCommand clearCommand;
-  EchoCommand echoCommand;
-  ColorCommand colorCommand;
-  SaveCommand saveCommand(&shell);
-  HistoryCommand historyCommand(&shell);
+  std::list<Command*> commands = {
+      new ClearCommand(),
+      new EchoCommand(),
+      new ColorCommand(),
+      new SaveCommand(&shell),
+      new HistoryCommand(&shell),
+  };
 
-  // Add commands to the shell
-  shell.commands.push_back(&clearCommand);
-  shell.commands.push_back(&echoCommand);
-  shell.commands.push_back(&colorCommand);
-  shell.commands.push_back(&saveCommand);
-  shell.commands.push_back(&historyCommand);
+  for (auto &cmd : commands) {
+    shell.commands.push_back(cmd);
+  }
 
   // Prepare hard coded commands for the help command
   std::list<Command *> helpCommands = shell.commands;

@@ -41,7 +41,7 @@ void Shell::executeCommand(const std::string &command)
 std::list<std::string> Shell::getParts(const std::string &command)
 {
   std::stringstream s(command);
-
+  
   std::string part;
 
   std::list<std::string> args;
