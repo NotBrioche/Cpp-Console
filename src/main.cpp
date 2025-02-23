@@ -5,20 +5,23 @@
 #include "EchoCommand.cpp"
 #include "HelpCommand.cpp"
 #include "ColorCommand.cpp"
+#include "SaveCommand.cpp"
 
 int main()
 {
 
+  Shell shell;
+
   ClearCommand clearCommand;
   EchoCommand echoCommand;
   ColorCommand colorCommand;
-
-  Shell shell;
+  SaveCommand saveCommand(&shell);
 
   // Add commands to the shell
   shell.commands.push_back(&clearCommand);
   shell.commands.push_back(&echoCommand);
   shell.commands.push_back(&colorCommand);
+  shell.commands.push_back(&saveCommand);
 
   // Prepare hard coded commands for the help command
   std::list<Command *> helpCommands = shell.commands;
