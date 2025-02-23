@@ -23,10 +23,9 @@ void Shell::run()
 
 void Shell::executeCommand(const std::string &command)
 {
+  std::list<std::string> parts = getParts(command);
   for (auto const &i : commands)
   {
-    std::list<std::string> parts = getParts(command);
-
     if (parts.front() == i->getName())
     {
       parts.pop_front();
@@ -35,13 +34,13 @@ void Shell::executeCommand(const std::string &command)
     }
   }
 
-  std::cout << "Unknown command: " << command << std::endl;
+  std::cout << "Unknown command: " << parts.front() << std::endl;
 }
 
 std::list<std::string> Shell::getParts(const std::string &command)
 {
   std::stringstream s(command);
-  
+
   std::string part;
 
   std::list<std::string> args;

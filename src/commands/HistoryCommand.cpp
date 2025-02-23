@@ -19,7 +19,7 @@ public:
   void execute(std::list<std::string> &args) override
   {
     if (shell->history.size() < 1)
-        std::cout << "You havn't sent any commands" << std::endl;
+        std::cout << "You haven't sent any commands" << std::endl;
 
     for (auto const &i : shell->history)
     {

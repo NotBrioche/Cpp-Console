@@ -13,6 +13,9 @@ public:
 
   void execute(std::list<std::string> &args) override
   {
+    if (checkArguments(args, 1, "Please enter a message"))
+      return;
+
     std::cout << args.front() << std::endl;
   }
 };
