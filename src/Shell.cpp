@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sstream>
+#include <algorithm>
 #include "Shell.h"
 
 void Shell::run()
@@ -45,9 +46,29 @@ std::list<std::string> Shell::getParts(const std::string &command)
 
   std::list<std::string> args;
 
+  bool quoted = false;
+  std::string quotedString;
+
   while (s >> part)
   {
-    args.push_back(part);
+    if (part.find("\"") != std::string::npos)
+    {
+      if (quoted)
+      {
+        quotedString += part;
+        std::replace(quotedString.begin(), quotedString.end(), '\"', '\0');
+        args.push_back(quotedString);
+        quotedString = "";
+        continue;
+      }
+
+      quoted = !quoted;
+    }
+
+    if (!quoted)
+      args.push_back(part);
+    else
+      quotedString += part.append(" ");
   }
 
   return args;

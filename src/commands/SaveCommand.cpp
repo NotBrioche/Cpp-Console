@@ -16,6 +16,9 @@ public:
 
   void execute(std::list<std::string> &args) override
   {
+    if (checkArguments(args, 1, "Please enter a filename"))
+      return;
+
     std::string fileString;
     for (auto const &i : shell->history)
     {
