@@ -1,12 +1,5 @@
 #include "Shell.h"
-
-// Include commands
-#include "ClearCommand.cpp"
-#include "EchoCommand.cpp"
-#include "HelpCommand.cpp"
-#include "ColorCommand.cpp"
-#include "SaveCommand.cpp"
-#include "HistoryCommand.cpp"
+#include "Commands.h"
 
 int main()
 {

@@ -1,0 +1,6 @@
+#include "ClearCommand.cpp"
+#include "EchoCommand.cpp"
+#include "HelpCommand.cpp"
+#include "ColorCommand.cpp"
+#include "SaveCommand.cpp"
+#include "HistoryCommand.cpp"
