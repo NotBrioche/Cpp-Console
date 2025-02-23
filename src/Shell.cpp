@@ -1,7 +1,6 @@
 #include <iostream>
 #include <sstream>
 #include "Shell.h"
-#include "HistoryCommand.cpp"
 
 void Shell::run()
 {

@@ -10,6 +10,6 @@ Le but serait de réaliser les commandes suivantes en 1 semaine :
 - ✅ `clear` - Efface l'écran
 - ✅ `history` - Affiche les dernière commandes utilisés
 - ✅ `echo` [message] - Affiche le message specifié
-- ❌ `color` [color] - Change la couleur de l'écran
+- ✅ `color` [color] - Change la couleur de l'écran
 - ❌ `save` [nom] - Sauvegarde l'historique des commandes dans le fichier specifié
 - ✅ `exit` - Quitte l'application
